@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="learnspark:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/learnspark_jar</output-path>
+    <root id="archive" name="learnspark.jar">
+      <element id="module-output" name="learnspark" />
+      <element id="library" level="project" name="commons-csv-1.5" />
+    </root>
+  </artifact>
+</component>

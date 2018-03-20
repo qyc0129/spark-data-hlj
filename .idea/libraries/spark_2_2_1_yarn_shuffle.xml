@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="spark-2.2.1-yarn-shuffle">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/spark-2.2.1-bin-hadoop2.7/yarn/spark-2.2.1-yarn-shuffle.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/spark-2.2.1-bin-hadoop2.7/yarn/spark-2.2.1-yarn-shuffle.jar!/" />
+    </SOURCES>
+  </library>
+</component>

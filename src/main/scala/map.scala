@@ -1,0 +1,22 @@
+import java.io.{BufferedReader, InputStreamReader}
+import java.net.URL
+
+object map {
+  def main():Unit={
+    //printf("hi")
+    val sb=new StringBuffer()
+    val url=new URL("http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=39.934,116.329&output=json&pois=1&ak=k7V4NDpGKfwEg2fBAVhkIVBqwD8DX0hA")
+    val urlc=url.openConnection()
+    urlc.setAllowUserInteraction(false)
+    val isr=new InputStreamReader(url.openStream())
+    val br=new BufferedReader(isr)
+
+      sb.append(br.readLine())
+
+    isr.close()
+    br.close()
+    printf(sb.toString())
+    //renderReverse&&renderReverse({"status":0,"result":{"location":{"lng":116.32899999999994,"lat":39.93400007551505},"formatted_address":"北京市海淀区增光路35-6号","business":"航天桥,甘家口,车公庄","addressComponent":{"country":"中国","country_code":0,"country_code_iso":"CHN","country_code_iso2":"CN","province":"北京市","city":"北京市","city_level":2,"district":"海淀区","town":"","adcode":"110108","street":"增光路","street_number":"35-6号","direction":"附近","distance":"13"},"pois":[{"addr":"北京市海淀区增光路小区35号","cp":" ","direction":"附近","distance":"8","name":"中国建设银行(增光路支行)","poiType":"金融","point":{"x":116.3290094537929,"y":39.93405701060194},"tag":"金融;银行","tel":"","uid":"e3082848bd8911bfb34c4941","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"增光路35号3-4楼","cp":" ","direction":"附近","distance":"23","name":"美廉美超市(增光路店)","poiType":"购物","point":{"x":116.32919809795,"y":39.934063926261149},"tag":"购物;超市","tel":"","uid":"24d2ccf27b96947f06026f26","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"北京市海淀区钢丝厂宿舍3号楼","cp":" ","direction":"东北","distance":"60","name":"增光路40号院","poiType":"房地产","point":{"x":116.32863216547873,"y":39.93369047965539},"tag":"房地产;住宅区","tel":"","uid":"f1f5cac52a81239b36b06cea","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"北京市增光路33号","cp":" ","direction":"西南","distance":"136","name":"中国标协写字楼","poiType":"房地产","point":{"x":116.32976403042129,"y":39.934734741857578},"tag":"房地产;写字楼","tel":"","uid":"43b7e8899273446a59f6beae","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"北京市海淀区增光路美廉美(首都师范大学东校区北)","cp":" ","direction":"西南","distance":"64","name":"增光路35号楼","poiType":"房地产","point":{"x":116.3292969115561,"y":39.934382045823827},"tag":"房地产;住宅区","tel":"","uid":"1f36c96004ec2b5d276e987b","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"北京市海淀区增光路甲38号","cp":" ","direction":"西北","distance":"152","name":"甲38号写字楼","poiType":"房地产","point":{"x":116.33024911539668,"y":39.93357291270627},"tag":"房地产;写字楼","tel":"","uid":"e889a744b5e060b58705bfaf","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"增光路36号院1","cp":" ","direction":"西","distance":"141","name":"大型五金建材超市","poiType":"购物","point":{"x":116.33019521706608,"y":39.93367664826017},"tag":"购物;家居建材","tel":"","uid":"bfffc43dddb9ca9712882483","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"北京市海淀区增光路27号院26楼增光路分理处","cp":" ","direction":"西","distance":"182","name":"中国农业银行(增光路分理处)","poiType":"金融","point":{"x":116.33062640371087,"y":39.93413999846609},"tag":"金融;银行","tel":"","uid":"9f97b1c5fccfe67bb74f54b4","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"阜成路白堆子131号","cp":" ","direction":"北","distance":"276","name":"北京市海淀实验中学(阜成路北二街)","poiType":"教育培训","point":{"x":116.32861419936852,"y":39.93211368245396},"tag":"教育培训;中学","tel":"","uid":"00f1c7fb23d9311fc056ac7d","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}},{"addr":"北京市海淀区增光路45号(中国劳动关系学院东门)","cp":" ","direction":"东南","distance":"377","name":"中工大厦","poiType":"酒店","point":{"x":116.32589233367328,"y":39.935052858277369},"tag":"酒店;其他","tel":"","uid":"5ce2637d86be2648ae31e504","zip":"","parent_poi":{"name":"","tag":"","addr":"","point":{"x":0.0,"y":0.0},"direction":"","distance":"","uid":""}}],"roads":[],"poiRegions":[],"sematic_description":"中国建设银行(增光路支行)附近8米","cityCode":131}})
+
+  }
+}
