@@ -55,13 +55,13 @@ object read {
     val dfh3=df3.where("hour = 3")
     //val df4=dfh0.select(df3("lng").cast("Double"),df3("lat").cast("Double"),df3("count").cast("Int"),df3("hour").cast("Int"))
     // df4.write.format("csv").save(path3)//储存最终结果
-    val dffh4=dfh0.select(dfh0("lng").cast("Double"),dfh0("lat").cast("Double"),dfh0("count").cast("Int"),dfh0("hour").cast("Int"))
+    val dffh4=dfh0.select(dfh0("lng").cast("Double"),dfh0("lat").cast("Double"),dfh0("count").cast("Int"))
     dffh4.write.mode("append").json(path3+"/h0")//json
-  val dffh5=dfh1.select(dfh1("lng").cast("Double"),dfh1("lat").cast("Double"),dfh1("count").cast("Int"),dfh1("hour").cast("Int"))
+  val dffh5=dfh1.select(dfh1("lng").cast("Double"),dfh1("lat").cast("Double"),dfh1("count").cast("Int"))
     dffh5.write.mode("append").json(path3+"/h1")//json
-  val dffh6=dfh2.select(dfh2("lng").cast("Double"),dfh2("lat").cast("Double"),dfh2("count").cast("Int"),dfh2("hour").cast("Int"))
+  val dffh6=dfh2.select(dfh2("lng").cast("Double"),dfh2("lat").cast("Double"),dfh2("count").cast("Int"))
     dffh6.write.mode("append").json(path3+"/h2")//json
-  val dffh7=dfh3.select(dfh3("lng").cast("Double"),dfh3("lat").cast("Double"),dfh3("count").cast("Int"),dfh3("hour").cast("Int"))
+  val dffh7=dfh3.select(dfh3("lng").cast("Double"),dfh3("lat").cast("Double"),dfh3("count").cast("Int"))
     dffh7.write.mode("append").json(path3+"/h3")//json
 
     val input2=sc.textFile(path3+"/h0")
