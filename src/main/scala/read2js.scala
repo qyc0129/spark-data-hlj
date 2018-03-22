@@ -1,7 +1,7 @@
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
 
-object read {
+object read2js {
 
 
   def main(args:Array [String]): Unit =
@@ -27,7 +27,7 @@ object read {
     //val lines3=lines2.map((f:String)=>(f.split(";")(2)+";"+f.split(";")(4)+";"+f.split(";")(5),f.split(";")(0)+";"+f.split(";")(1)+";"+f.split(";")(3)))
     //val lines3=lines2.map((f:String)=>(f.split(";")(2)+";"+f.split(";")(4)+";"+f.split(";")(5),f.split(";")(3)))  //按天聚合
 
-    val lines3=lines2.map((f:String)=>(f.split(";")(2)+";"+f.split(";")(4)+";"+f.split(";")(5)+";"+f.split(";")(6),f.split(";")(3)))//按小时聚合 +total -time X 2
+    val lines3=lines2.map((f:String)=>(f.split(";")(4)+";"+f.split(";")(5)+";"+f.split(";")(6),f.split(";")(3)))//按小时聚合 +total -time X 2
 
     //把用户id+lac+ci当作主键进行聚合，由于已经是一天之内的数据，相当于直接按天聚合
     //可以在split中增加"小时"，以后可以加入这一主键进行聚合，即按小时聚合
@@ -41,13 +41,13 @@ object read {
       //.load("test")//重新载入话单数据
     //val df2=df.toDF("sT","eT","id","total","lac","ci")//给话单数据设置表头
     //val df2=df.toDF("sT","eT","id","total","lac","ci")//给话单数据设置表头
-    val df2=df.toDF("id","hour","lac","ci","total","num")//给话单数据设置表头
+    val df2=df.toDF("hour","lac","ci","total","num")//给话单数据设置表头
     val df1 = spark2.read.format("com.databricks.spark.csv")
       .option("header", "true")
       .option("inferSchema", "false")
       .option("delimiter",";")//分隔符；
       .load("hljfinal.csv")//载入哈尔滨基站对应表
-  val df3=df2.join(df1,Seq("lac","ci")).toDF("lac","ci","id","hour","total","count","lng","lat")//两表按"lac"与"ci"两键值进行内链接
+  val df3=df2.join(df1,Seq("lac","ci")).toDF("lac","ci","hour","total","count","lng","lat")//两表按"lac"与"ci"两键值进行内链接
 
     val dfh0=df3.where("hour = 0")
     val dfh1=df3.where("hour = 1")
